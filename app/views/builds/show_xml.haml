@@ -1,0 +1,34 @@
+!!! XML
+\<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+%plist{ version: "1.0" }
+  %dict
+    %key items
+    %array
+      %dict
+        %key assets
+        %array
+          %dict
+            %key kind
+            %string software-package
+            %key url
+            %string #{@build.url}
+          %dict
+            %key kind
+            %string display-image
+            %key url
+            %string http://www.placecage.com/c/57/57
+          %dict
+            %key kind
+            %string full-size-image
+            %key url
+            %string http://www.placecage.com/c/512/512
+        %key metadata
+        %dict
+          %key bundle-identifier
+          %string ArbitraryBundleId.ios8
+          %key bundle-version
+          %string 2.0.1
+          %key kind
+          %string software
+          %key title
+          %string #{@build.title}

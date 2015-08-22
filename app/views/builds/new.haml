@@ -9,14 +9,6 @@
   %input{ id: "file", name: "build[file]", type: "file" }
   %br
 
-  %label{ for: "bundle_id" } Bundle ID: (?)
-  %select{ id: "bundle_id", name: "build[bundle_id]", type: "text" }
-    %option{ value: "com.shoptap.thehunt" } thehunt-iphone
-    %option{ value: "com.shoptap.thehunt-demo" } thehunt-iphone-demo
-    %option{ value: "thehunt.shoptap.thehunt" } thehunt-android
-    %option{ value: "thehunt.shoptap.thehunt.demo" } thehunt-android-demo
-  %br
-
   %label{ for: "description" } Description
   %input{ id: "description", name: "build[description]", type: "text", value: @build.description }
   %br

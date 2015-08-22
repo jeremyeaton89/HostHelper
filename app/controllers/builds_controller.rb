@@ -9,10 +9,10 @@ class BuildsController < ApplicationController
   end
 
   def create
-    S3Helper.upload(params[:build][:file], random_token)
+    params[:build][:link] = S3Helper.upload(params[:build][:file], random_token)
     params[:build][:slug] = random_token
 
-    @build = Build.new(params.require(:build).permit(:slug, :title, :description))
+    @build = Build.new(params.require(:build).permit(:slug, :title, :description, :link))
 
     if @build.save
       redirect_to :root
@@ -23,6 +23,11 @@ class BuildsController < ApplicationController
 
   def show
     @build = Build.find_by_slug params[:id]
+  end
+
+  def show_xml
+    @build = Build.find_by_slug params[:slug]
+    render "builds/show_xml", mime_type: "text/xml", layout: nil
   end
 
   def destroy

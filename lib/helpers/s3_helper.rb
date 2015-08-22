@@ -10,7 +10,7 @@ class S3Helper
       :secret_access_key => ENV['HH_AWS_SECRET_ACCESS_KEY']
     )
 
-    bucket = s3.buckets[ENV['HH_AWS_BUCKET'] || 'hosthelper']
+    bucket = s3.buckets[$AWS_BUCKET]
     build  = bucket.objects[object_key]
     build.write(open(file.tempfile.path), :acl => :public_read, :content_type => 'application/octet-stream')
 

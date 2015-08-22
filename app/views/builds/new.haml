@@ -1,0 +1,24 @@
+%h1 Upload a Build
+
+%form{ action: "/builds", method: "post", enctype: "multipart/form-data" }
+  %label{ for: "title" } Title:
+  %input{ id: "title", name: "build[title]", type: "text", value: @build.title }
+  %br
+
+  %label{ for: "file" } Upload IPA:
+  %input{ id: "file", name: "build[file]", type: "file" }
+  %br
+
+  %label{ for: "bundle_id" } Bundle ID: (?)
+  %select{ id: "bundle_id", name: "build[bundle_id]", type: "text" }
+    %option{ value: "com.shoptap.thehunt" } thehunt-iphone
+    %option{ value: "com.shoptap.thehunt-demo" } thehunt-iphone-demo
+    %option{ value: "thehunt.shoptap.thehunt" } thehunt-android
+    %option{ value: "thehunt.shoptap.thehunt.demo" } thehunt-android-demo
+  %br
+
+  %label{ for: "description" } Description
+  %input{ id: "description", name: "build[description]", type: "text", value: @build.description }
+  %br
+
+  %button{ type: "submit" } Create

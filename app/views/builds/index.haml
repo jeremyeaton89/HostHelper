@@ -1,0 +1,12 @@
+%h1 Builds
+
+= link_to 'Upload a Build', new_build_url
+
+.builds
+  - @builds.each do |build| 
+    %a{ href: build_url(build.slug) }
+      %ul.build{ style: 'border: 1px solid black;'}
+        %li=build.title
+        %li=build.description
+        %li=build.slug
+        %li=build.created_at

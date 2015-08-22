@@ -1,0 +1,5 @@
+%h1 #{@build.title}
+%a{ href: @build.build_url(request.base_url) } Install
+
+- if @build.description
+  .build-description #{@build.description}

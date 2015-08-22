@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :builds
 
-  get '/builds/:slug/xml', to: 'builds#show_xml'
+  get '/builds/:id/xml', to: 'builds#show_xml'
   
 end

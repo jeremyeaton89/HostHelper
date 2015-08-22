@@ -1,7 +1,7 @@
 class BuildsController < ApplicationController
 
   def index
-    @builds = Build.all 
+    @builds = Build.paginate(page: params[:page], per_page: 2).order('created_at DESC')
   end
 
   def new
@@ -26,12 +26,12 @@ class BuildsController < ApplicationController
   end
 
   def show_xml
-    @build = Build.find_by_slug params[:slug]
+    @build = Build.find_by_slug params[:id]
     render "builds/show_xml", mime_type: "text/xml", layout: nil
   end
 
   def destroy
-    Build.find_by_slug(params[:slug]).destroy
+    Build.find_by_slug(params[:id]).destroy
   end
 
   private 

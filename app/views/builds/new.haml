@@ -1,16 +1,17 @@
-%h1 Upload a Build
+%header
+  %h1= 'Upload a Build'
 
-%form{ action: "/builds", method: "post", enctype: "multipart/form-data" }
-  %label{ for: "title" } Title:
-  %input{ id: "title", name: "build[title]", type: "text", value: @build.title }
-  %br
+%form.new-build{ action: "/builds", method: "post", enctype: "multipart/form-data" }
+  .field
+    %label{ for: "title" } Title:
+    %input{ id: "title", name: "build[title]", type: "text", value: @build.title }
 
-  %label{ for: "file" } Upload IPA:
-  %input{ id: "file", name: "build[file]", type: "file" }
-  %br
+  .field
+    %label{ for: "description" } Description:
+    %input{ id: "description", name: "build[description]", type: "text", value: @build.description }
 
-  %label{ for: "description" } Description
-  %input{ id: "description", name: "build[description]", type: "text", value: @build.description }
-  %br
+  .field
+    %label{ for: "file" } Upload IPA:
+    %input{ id: "file", name: "build[file]", type: "file" }
 
-  %button{ type: "submit" } Create
+  %button{ type: "submit" } Upload

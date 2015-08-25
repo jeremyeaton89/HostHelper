@@ -29,10 +29,12 @@
   color: black;
 }
 .build .description {
-  height: 40px;
+  height: 36px;
   color: gray;
   font-size: 14px;
   margin: 0 120px 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .build .created-at {
   color: gray;
@@ -112,5 +114,24 @@
   letter-spacing: 7px;
   margin-top: 50px;
 }
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 30px !important;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 25px !important;
+  }
+  header a { display: none; }
+  .build .title {
+    margin-right: 125px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
 
 

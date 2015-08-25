@@ -2,6 +2,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 body {
   font-family: 'Quicksand', sans-serif;  
@@ -10,7 +12,10 @@ header {
   border-bottom: 1px solid gray;
   width: 100%;
   height: 70px;
-  position: absolute;
+  position: fixed;
+  background-color: white;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 header h1 {
   margin: 5px 0 0 5px;

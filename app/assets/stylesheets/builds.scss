@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.builds, .new-build {
+.builds, .new-build, .show-build {
   height: 100%;
   width: 100%;
   padding: 70px 0 40px 0;
@@ -26,14 +26,16 @@
 .build .title {
   height: 20px;
   font-weight: 600;
+  color: black;
 }
 .build .description {
   height: 40px;
   color: gray;
   font-size: 14px;
-  margin-left: 10px;
+  margin: 0 120px 0 10px;
 }
 .build .created-at {
+  color: gray;
   position: absolute;
   font-size: 12px;
   right: 0;
@@ -54,14 +56,18 @@
   margin-left: 15px;
   line-height: 25px;
 }
-.new-build input {
+.new-build input,
+.show-build a {
   float: left;
   outline: none;
   height: 20px;
   width: 200px;
   font-size: 14px;
 }
-.new-build button {
+.new-build button,
+.show-build a,
+.build a.install,
+  {
   cursor: pointer;
   margin: 10px 25px;
   height: 50px;
@@ -80,8 +86,31 @@
   outline: none;
   margin-left: 15px;
 }
-.new-build button:hover {
+.build a.install {
+  width: 115px;
+  height: 30px;
+  position: absolute;
+  right: -1px;
+  top: 22px;
+  margin: 0;
+  line-height: 29px;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+.new-build button:hover,
+.show-build a:hover,
+.build a.install:hover {
   transition: .2s;
   color: white;
   background: gray;
 }
+.show-build {
+  padding: 100px 0 0 20px;
+}
+.show-build a {
+  line-height: 53px;
+  letter-spacing: 7px;
+  margin-top: 50px;
+}
+
+

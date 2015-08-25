@@ -4,14 +4,14 @@
 %form.new-build{ action: "/builds", method: "post", enctype: "multipart/form-data" }
   .field
     %label{ for: "title" } Title:
-    %input{ id: "title", name: "build[title]", type: "text", value: @build.title }
+    %input{ id: "title", name: "build[title]", type: "text", value: @build.title, required: true }
 
   .field
     %label{ for: "description" } Description:
-    %input{ id: "description", name: "build[description]", type: "text", value: @build.description }
+    %input{ id: "description", name: "build[description]", type: "text", value: @build.description, required: true }
 
   .field
     %label{ for: "file" } Upload IPA:
-    %input{ id: "file", name: "build[file]", type: "file" }
+    %input{ id: "file", name: "build[file]", type: "file", required: true }
 
   %button{ type: "submit" } Upload

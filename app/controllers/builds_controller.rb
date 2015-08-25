@@ -21,6 +21,10 @@ class BuildsController < ApplicationController
     end
   end
 
+  def show
+    @build = Build.find_by_slug params[:id]
+  end
+
   def show_xml
     @build = Build.find_by_slug params[:id]
     render "builds/show_xml", mime_type: "text/xml", layout: nil

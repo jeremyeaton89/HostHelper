@@ -1,0 +1,7 @@
+= render 'shared/header', title: @build.title
+
+.show-build
+  .description
+    =@build.description
+  .button
+    = link_to 'Install', @build.build_url(request.base_url)  

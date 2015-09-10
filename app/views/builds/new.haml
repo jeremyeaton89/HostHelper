@@ -8,10 +8,10 @@
 
   .field
     %label{ for: "description" } Description:
-    %input{ id: "description", name: "build[description]", type: "text", value: @build.description, required: true }
+    %input{ id: "description", name: "build[description]", type: "text", value: @build.description }
 
   .field
-    %label{ for: "file" } Upload IPA:
+    %label{ for: "file" } Upload Build:
     %input{ id: "file", name: "build[file]", type: "file", required: true }
 
   %button{ type: "submit" } Upload

@@ -4,6 +4,7 @@
   - @builds.each do |build| 
     %a{ href: build_url(build.slug) }
       .build
+        = image_tag "#{build.type}-icon.png"
         .title=build.title
         .description=build.description
         .created-at

@@ -3,7 +3,8 @@ require 'aws/s3'
 class S3Helper
 
   def self.upload(file, token)
-    object_key = "ipas/#{token}.ipa"
+    ext = file.path[-3..-1]
+    object_key = "#{ext}s/#{token}.#{ext}"
 
     s3 = AWS::S3.new(
       :access_key_id => ENV['HH_AWS_ACCESS_KEY_ID'],

@@ -1,6 +1,7 @@
 = render 'shared/header', title: @build.title
 
 .show-build
+  = image_tag "#{@build.type}-icon.png"
   .description
     =@build.description
   .button
